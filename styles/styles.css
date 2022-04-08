@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@0,200;0,300;0,400;1,200&display=swap");
+
+:root {
+  --spacing: 32px;
+  --section-size: 160px;
+  --body-text: #3d3e4a;
+  --background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  --section: white;
+}
+/*sun:#FEC89A;
+cloud: D8E2DC;
+cloud:ECE4DB;
+cloud:E8E8E4;
+location:FEC5BB;
+
+*/
+
+body {
+  font-family: "Mulish", sans-serif;
+  color: var(--body-text);
+  background-color: whitesmoke;
+}
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  gap: var(--spacing);
+  max-width: 512px;
+  margin: 0 auto;
+  margin-top: 64px;
+  padding: var(--spacing);
+  background-image: var(--background);
+  border-radius: 48px;
+}
+
+main {
+  margin-bottom: var(--spacing);
+}
+
+section {
+  width: var(--section-size);
+  height: var(--section-size);
+  padding: var(--spacing);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 32px;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+}
+#temperature {
+  font-size: 64px;
+}
+
+#temperature,
+#location {
+  cursor: pointer;
+}
+#temperature:hover,
+#location:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: 0.3s;
+}
+
+footer {
+  margin-top: var(--spacing);
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: var(--body-text);
+}
+a:hover {
+  color: #fec5bb;
+}
+
+#forecast {
+  line-height: 1.5;
+}
+#forecast h1 {
+  text-align: left;
+}
+#description {
+  text-transform: capitalize;
+}
+
+#location lottie-player,
+#location h1 {
+  position: relative;
+  top: -32px;
+}
