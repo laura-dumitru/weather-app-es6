@@ -3,21 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="mobile.css" />
+    <title>Weather app</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/mobile.css" />
   </head>
   <body>
     <header></header>
     <main>
       <section id="temperature">
-        <p>30°C</p>
-        <p>64°F</p>
+        <p id="weather-temperature"></p>
       </section>
 
       <section id="icon">
         <lottie-player
-          src="icon.json"
+          src="img/snow.json"
           background="transparent"
           speed="1"
           loop
@@ -26,28 +26,34 @@
       </section>
 
       <section id="location">
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
         <lottie-player
-          src="location.json"
+          src="img/location.json"
           background="transparent"
           speed="1"
           loop
           autoplay
         ></lottie-player>
-        <h1>Bucharest</h1>
+        <h1 id="city"></h1>
       </section>
 
       <section id="forecast">
         <h1>Forecast</h1>
-        <p>Sunny with clouds</p>
-        <p>Thursday</p>
-        <p>07/04</p>
-        <p>Humidity: 37%</p>
+        <p id="description"></p>
+        <p>
+          Humidity:
+          <span id="humidity"></span>
+        </p>
       </section>
     </main>
     <footer>
-      <p>Coded by Laura</p>
+      Coded by
+      <p>
+        <a href="https://www.linkedin.com/in/laura-dumitru-923248137/">
+          Laura
+        </a>
+      </p>
     </footer>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
