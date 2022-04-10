@@ -1,0 +1,24 @@
+@media only screen and (max-width: 540px) {
+  main {
+    flex-direction: column;
+    border-radius: 0;
+    margin-top: 0;
+    gap: 16px;
+  }
+  section {
+    width: 80%;
+    height: 80px;
+    margin: 0 auto;
+  }
+  #temperature,
+  #forecast,
+  #forecast h1 {
+    text-align: center;
+  }
+  #temperature {
+    font-size: 50px;
+  }
+  footer p {
+    margin: 16px;
+  }
+}
