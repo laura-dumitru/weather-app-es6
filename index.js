@@ -10,8 +10,8 @@ const cityElement = document.querySelector("#city");
 const descriptionElement = document.querySelector("#description");
 const humidityElement = document.querySelector("#humidity");
 
-// const displayWeather = (response) => {
-function displayWeather(response) {
+//function displayWeather(response) {
+const displayWeather = (response) => {
   let unit = "C";
 
   temperatureElement.innerHTML = `${Math.round(
@@ -19,28 +19,27 @@ function displayWeather(response) {
   )}°${unit}`;
 
   let iconCode = response.data.weather[0].icon;
-  //console.log(iconCode);
-  iconElement.setAttribute("src", `img/${iconCode}.json`);
-  //console.log(iconElement);
+
+  iconElement.load(`img/${iconCode}.json`);
 
   cityElement.innerHTML = response.data.name;
 
   descriptionElement.innerHTML = response.data.weather[0].description;
 
   humidityElement.innerHTML = `${response.data.main.humidity}%`;
-}
+};
 
-//let showPosition = (position) => {
-function showPosition(position) {
+//function showPosition(position) {
+const showPosition = (position) => {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric`;
 
-  let city = "Budapest";
-  apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  //let city = "Tokyo";
+  //apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(displayWeather);
-}
+};
 
 navigator.geolocation.getCurrentPosition(showPosition);
 
