@@ -1,5 +1,7 @@
 # Weather widget
 
+Make sure you enable location services on your device or browser.
+
 ## Tools used
 
 The widget pulls data from the [Open Weather API](https://openweathermap.org) and shows the current forecast based on the user's [geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API). When the user clicks the temperature tile, the temperature changes from Celcius to Fahrenheit.
