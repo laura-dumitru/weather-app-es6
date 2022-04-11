@@ -1,4 +1,4 @@
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 383px) {
   main {
     flex-direction: column;
     border-radius: 0;
@@ -10,11 +10,7 @@
     height: 80px;
     margin: 0 auto;
   }
-  #temperature,
-  #forecast,
-  #forecast h1 {
-    text-align: center;
-  }
+
   #temperature {
     font-size: 50px;
   }
