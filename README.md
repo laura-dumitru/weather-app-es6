@@ -1,6 +1,4 @@
-# Title
-
-Weather widget
+# Weather widget
 
 ## Tools used
 
