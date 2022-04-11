@@ -46,7 +46,6 @@ section {
 
 h1 {
   font-size: 24px;
-  text-align: center;
 }
 #temperature {
   text-align: center;
@@ -56,6 +55,26 @@ h1 {
 #temperature:hover {
   background-color: rgba(255, 255, 255, 0.4);
   transition: 0.3s;
+}
+
+#location {
+  display: flex;
+  flex-direction: column;
+}
+#location h1 {
+  text-align: center;
+}
+#location lottie-player,
+#location h1 {
+  position: relative;
+  top: -32px;
+}
+
+#forecast {
+  line-height: 1.5;
+}
+#description {
+  text-transform: capitalize;
 }
 
 footer {
@@ -68,21 +87,4 @@ a {
 }
 a:hover {
   color: #fcd5ce;
-}
-
-#forecast {
-  text-align: center;
-  line-height: 1.5;
-}
-#forecast h1 {
-  text-align: center;
-}
-#description {
-  text-transform: capitalize;
-}
-
-#location lottie-player,
-#location h1 {
-  position: relative;
-  top: -32px;
 }
