@@ -49,6 +49,7 @@ h1 {
   text-align: center;
 }
 #temperature {
+  text-align: center;
   font-size: 64px;
   cursor: pointer;
 }
@@ -70,10 +71,11 @@ a:hover {
 }
 
 #forecast {
+  text-align: center;
   line-height: 1.5;
 }
 #forecast h1 {
-  text-align: left;
+  text-align: center;
 }
 #description {
   text-transform: capitalize;
