@@ -1,4 +1,4 @@
-@media only screen and (max-width: 383px) {
+@media only screen and (max-width: 543px) {
   main {
     flex-direction: column;
     border-radius: 0;
@@ -10,13 +10,30 @@
     height: 80px;
     margin: 0 auto;
   }
-  h1 {
-    font-size: 20px;
+
+  #location {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  #location lottie-player {
+    position: relative;
+    top: -8px;
+    left: -32px;
+    width: 100px;
+    height: 100px;
+    margin-right: -64px;
+  }
+  #location h1 {
+    text-align: left;
+    margin-top: 64px;
   }
 
-  #temperature {
-    font-size: 50px;
+  #forecast {
+    text-align: center;
   }
+
   footer p {
     margin: 16px;
   }
