@@ -7,12 +7,17 @@
     width: 25%;
     height: 80px;
   }
-
-  #icon lottie-player {
-    height: 200px;
+  h1 {
+    font-size: 20px;
+  }
+  h1#city {
+    font-size: 20px;
+  }
+  #temperature {
+    font-size: 46px;
   }
 
-  #location h1 {
-    font-size: 16px;
+  #icon lot22e-player {
+    height: 200px;
   }
 }
