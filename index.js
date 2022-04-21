@@ -1,55 +1,48 @@
 const apiKey = "e3dda97cfe9d9fc23a4b5fa7130913b1";
 
-const temperatureTileElement = document.querySelector("#temperature");
-const temperatureElement = document.querySelector("#temperature p");
+const temperatureTile = document.querySelector("#temperature");
+const temperatureContent = document.querySelector("#temperature p");
 
-const iconElement = document.querySelector("#icon lottie-player");
+const iconPlayer = document.querySelector("#icon lottie-player");
 
-const locationElement = document.querySelector("#location");
-const cityElement = document.querySelector("#city");
+const cityContent = document.querySelector("#city");
 
-const descriptionElement = document.querySelector("#description");
-const humidityElement = document.querySelector("#humidity");
+const descriptionContent = document.querySelector("#description");
+const humidityContent = document.querySelector("#humidity");
 
-const convertTemperature = (celcius) => (celcius * 9) / 5 + 32;
-
-//function displayWeather(response) {
 const displayWeather = (response) => {
-  let temperature;
-  if (temperatureElement.innerHTML.endsWith("C")) {
-    const fahrenheitTemperature = convertTemperature(response.data.main.temp);
-    temperature = `${Math.round(fahrenheitTemperature)}°F`;
+  const celcius = Math.round(response.data.main.temp);
+  const fahrenheit = Math.round((celcius * 9) / 5 + 32);
+
+  if (temperatureContent.innerHTML.endsWith("C")) {
+    temperatureContent.innerHTML = `${fahrenheit}°F`;
   } else {
-    temperature = `${Math.round(response.data.main.temp)}°C`;
+    temperatureContent.innerHTML = `${celcius}°C`;
   }
-  temperatureElement.innerHTML = temperature;
 
-  iconElement.load(`img/${response.data.weather[0].icon}.json`);
+  const iconCode = response.data.weather[0].icon;
+  iconPlayer.load(`img/${iconCode}.json`);
 
-  cityElement.innerHTML = response.data.name;
+  cityContent.innerHTML = response.data.name;
 
-  descriptionElement.innerHTML = response.data.weather[0].description;
-
-  humidityElement.innerHTML = `${response.data.main.humidity}%`;
+  descriptionContent.innerHTML = response.data.weather[0].description;
+  humidityContent.innerHTML = `${response.data.main.humidity}%`;
 };
 
-//function showPosition(position) {
 const showPosition = (position) => {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric`;
 
   //let city = "Valencia";
-  //apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  //apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(displayWeather);
 };
 
-const changeTemperature = (event) => {
-  event.preventDefault();
+const changeTemperature = () =>
   navigator.geolocation.getCurrentPosition(showPosition);
-};
 
-navigator.geolocation.getCurrentPosition(showPosition);
+changeTemperature();
 
-temperatureTileElement.addEventListener("click", changeTemperature);
+temperatureTile.addEventListener("click", changeTemperature);
