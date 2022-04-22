@@ -1,5 +1,7 @@
 # Weather widget
 
+![img](img/screenshot.png)
+
 Make sure you enable location services on your device or browser.
 
 ## Tools used
